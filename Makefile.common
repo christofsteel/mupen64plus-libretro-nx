@@ -377,6 +377,10 @@ SOURCES_C += \
 	$(RSPDIR)/src/re2.c \
 	$(RSPDIR)/src/plugin.c
 
+ifeq ($(LLE), 1)
+	SOURCES_C += $(CXD4DIR)/rsp.c
+endif
+
 ifeq ($(HAVE_PARALLEL_RSP), 1)
 ### Tiny Tiger's LLE RSP JIT ###
    PARALLEL_RSP_ARCH := x86_64
