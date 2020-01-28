@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.php": "php",
+        "*.libnx": "makefile",
+        "*.common": "makefile",
+        "*.v": "vhdl",
+        "*.ucf": "vhdl",
+        "stdlib.h": "c",
+        "unordered_map": "cpp",
+        "memory": "cpp"
+    }
+}
