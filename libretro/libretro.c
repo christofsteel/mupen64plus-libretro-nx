@@ -1128,12 +1128,11 @@ void retro_run (void)
     //glsm_ctl(GLSM_CTL_STATE_BIND, NULL);
     co_switch(game_thread);
    // glsm_ctl(GLSM_CTL_STATE_UNBIND, NULL);
-    /*if (libretro_swap_buffer)
-        video_cb(RETRO_HW_FRAME_BUFFER_VALID, retro_screen_width, retro_screen_height, 0);
+    if (libretro_swap_buffer)
+        video_cb(prescale, screen_width, screen_height, screen_pitch);
     else if(EnableFrameDuping)
-        video_cb(NULL, retro_screen_width, retro_screen_height, 0);*/
+        video_cb(NULL, screen_width, screen_height, screen_pitch);
         
-    video_cb(prescale, screen_width, screen_height, screen_pitch);
 }
 
 void retro_reset (void)
