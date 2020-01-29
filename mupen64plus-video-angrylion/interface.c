@@ -143,8 +143,11 @@ void vdac_write(struct frame_buffer* fb)
    screen_pitch = fb->pitch * 4;
 }
 
+extern bool libretro_swap_buffer;
 void vdac_sync(bool invalid) { 
+   libretro_swap_buffer = !invalid;
 }
+
 void vdac_close(void) { }
 
 void angrylion_set_vi(unsigned value)
