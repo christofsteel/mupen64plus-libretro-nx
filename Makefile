@@ -136,6 +136,9 @@ else ifneq (,$(findstring rpi,$(platform)))
    ifneq (,$(findstring rpi4,$(platform)))
       MESA = 1
    endif
+   ifneq (,$(findstring rpi_64_4,$(platform)))
+      MESA = 1
+   endif
    ifeq ($(MESA), 1)
       GL_LIB := -lGLESv2
    else
@@ -155,6 +158,9 @@ else ifneq (,$(findstring rpi,$(platform)))
    else ifneq (,$(findstring rpi4,$(platform)))
       CPUFLAGS += -march=armv8-a+crc -mtune=cortex-a72 -mfpu=neon-fp-armv8 -mfloat-abi=hard
       HAVE_NEON = 1
+   else ifneq (,$(findstring rpi_64_4,$(platform)))
+      CPUFLAGS += -march=armv8-a+crc -mtune=cortex-a72
+      WITH_DYNAREC = aarch64
    endif
    COREFLAGS += -DOS_LINUX
    ASFLAGS = -f elf -d ELF_TYPE
