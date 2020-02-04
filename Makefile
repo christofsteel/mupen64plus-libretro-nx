@@ -159,7 +159,7 @@ else ifneq (,$(findstring rpi,$(platform)))
       CPUFLAGS += -march=armv8-a+crc -mtune=cortex-a72 -mfpu=neon-fp-armv8 -mfloat-abi=hard
       HAVE_NEON = 1
    else ifneq (,$(findstring rpi_64_4,$(platform)))
-      CPUFLAGS += -march=armv8-a+crc -mtune=cortex-a72
+      CPUFLAGS += -march=native
       WITH_DYNAREC = aarch64
    endif
    COREFLAGS += -DOS_LINUX
